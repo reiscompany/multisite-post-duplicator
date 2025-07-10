@@ -1147,7 +1147,7 @@ function mpd_get_post_taxonomy_terms($post_id, $category_only, $destination_id) 
     return apply_filters('mpd_post_taxonomy_terms', $source_taxonomy_terms_object, $destination_id);
 }
 
-function &mpd_hash_obj_by($obj_array = false, $key) {
+function &mpd_hash_obj_by($obj_array = false, $key = '') {
 
     $res = array();
 
@@ -1479,7 +1479,7 @@ function mpd_search($array, $key, $value){
  * @return int The id of the newly created image
  *
  */
-function mpd_copy_file_to_destination($attachment, $img_url, $post_id = 0, $source_id, $file_id){
+function mpd_copy_file_to_destination($attachment, $img_url, $post_id = 0, $source_id = 0, $file_id = 0){
 
     $info       = pathinfo($img_url);
 	$ext		 = (isset( $info[ 'extension' ] )) ? '.' . $info[ 'extension' ] : '';
